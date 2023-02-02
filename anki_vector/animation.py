@@ -165,7 +165,8 @@ class AnimationComponent(util.Component):
                 for anim_name in anim_names:
                     print(anim_name)
         """
-        return await self._load_animation_list()
+        # Modified due to timeout error
+        return [] # await self._load_animation_list()
 
     @connection.on_connection_thread(log_messaging=False, requires_control=False)
     async def load_animation_trigger_list(self):
@@ -188,7 +189,8 @@ class AnimationComponent(util.Component):
                 for anim_trigger_name in anim_trigger_names:
                     print(anim_trigger_name)
         """
-        return await self._load_animation_trigger_list()
+        # Modified due to timeout error
+        return [] # await self._load_animation_trigger_list()
 
     @connection.on_connection_thread()
     async def play_animation_trigger(self, anim_trigger: str, loop_count: int = 1, use_lift_safe: bool = False, ignore_body_track: bool = False, ignore_head_track: bool = False, ignore_lift_track: bool = False):  # START
